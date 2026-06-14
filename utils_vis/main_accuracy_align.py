@@ -77,8 +77,6 @@ def get_avg_metric_corr_w_acc(metric_list,arg_name):
         
     return final_corr_df, final_sig_corr_df, final_corr_df_f, final_sig_corr_df_f
 
-#%%
-# final_corr_df, final_sig_corr_df, final_corr_df_f, final_sig_corr_df_f = get_avg_metric_corr_w_acc(all_metrics_w_acc)
 # %%
 # All-right & all-wrong 
 
@@ -103,7 +101,7 @@ def plot_metric_boxplots(all_right_df, all_wrong_df, metric_list, list_name, arg
         ax = axes[i]
         sns.boxplot(data=combined_df, x='group', y=metric, ax=ax, palette="Set2")
 
-        # 配对 t 检验（按模型）
+        # t-test (By model)
         try:
             right_mean = all_right_df.groupby("model")[metric].mean()
             wrong_mean = all_wrong_df.groupby("model")[metric].mean()
@@ -116,7 +114,6 @@ def plot_metric_boxplots(all_right_df, all_wrong_df, metric_list, list_name, arg
         except:
             t_stat, p_val, mean_diff = None, None, None
 
-        # 显著性符号
         if p_val is None:
             sig = "n/a"
             title = f"{metric}\n(p=n/a)"
@@ -134,7 +131,6 @@ def plot_metric_boxplots(all_right_df, all_wrong_df, metric_list, list_name, arg
         ax.set_xlabel('')
         ax.set_ylabel(metric)
 
-    # 删除多余子图
     for j in range(len(metric_list), len(axes)):
         fig.delaxes(axes[j])
 
@@ -151,10 +147,6 @@ def compare_all_right_wrong_box(benchmark, arg_name):
     baseline_metrics = ['bleu1','bleu4','rouge1','rouge2','rougeL','meteor','bertscore_f1']
     plot_metric_boxplots(all_right_df, all_wrong_df, my_metrics, "my_metric", arg_name, benchmark)
     plot_metric_boxplots(all_right_df, all_wrong_df, baseline_metrics, "baseline_metric",arg_name, benchmark)
-
-
-
-
 
 # %%
 # Pointbiserial Test
@@ -179,10 +171,3 @@ def pointbiserial_test_between_acc_metric(arg_name, benchmark):
     df_results.to_csv(os.path.join(save_path, f"corr_results_{arg_name}_{benchmark}.csv"))
     return pd.DataFrame(results)
          
-# # %%
-# arg_names = ['GTE_medicalNER','LEM_medicalNER','GTE_biomedicalNER','LEM_biomedicalNER']
-# benchmarks = ['USMLE_STEP_1','USMLE_STEP_2','USMLE_STEP_3','MedQA', 'MedExpQA']
-# for arg_name in arg_names:
-#     for benchmark in benchmarks:
-#         pointbiserial_test_between_acc_metric(arg_name,benchmark)
-# pd.read_csv(f"/projectnb/vkolagrp/yiliu/QA_pipeline/Paper_writing/processed_data/{arg_name}/{benchmark}/Qwen_{benchmark}_all_summary.csv", index_col = 0)
