@@ -1,3 +1,0 @@
-metric,pearson_corr,pearson_p,spearman_corr,spearman_p,kendall_corr,kendall_p
-background_recall,0.141,0.0,0.158,0.0,0.115,0.0
-ques_recall,0.081,0.0,0.114,0.0,0.089,0.0

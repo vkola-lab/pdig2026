@@ -1,4 +1,0 @@
-,metric,pearson,p_pearson,spearman,p_spearman,kendall,p_kendall
-0,acc,1.0,0.0,1.0,0.0,1.0,0.0004
-1,background_recall,0.8264,0.0219,0.9286,0.0025,0.8095,0.0107
-2,ques_recall,0.4431,0.3194,0.5357,0.2152,0.4286,0.2389

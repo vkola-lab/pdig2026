@@ -2,6 +2,7 @@
 supplement_info/q_square_metric/
 supplement_info/result_clarification/
 supplement_info/ablation/precomputed/
+supplement_info/results
 
 
 # optional cache/temp
@@ -10,4 +11,4 @@ supplement_info/ablation/precomputed/
 *.ckpt
 *.npy
 *.npz
-__pycache__/
+__pycache__/supplement_info/results/
