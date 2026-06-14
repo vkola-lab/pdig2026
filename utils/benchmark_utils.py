@@ -127,24 +127,3 @@ def clean_benchmark(benchmark, input_path, output_path):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(processed_data, f, ensure_ascii=False, indent=2)
     return processed_data
-#%%
-# MedExpQA_input = "./Benchmark/english_medexpqa/english_medexpqa.jsonl"
-# MedMCQA_input = "./Benchmark/english_medmcqa/MedMCQA_test.json"
-# MedQA_input = "./Benchmark/english_medqa/MedQA_USMLE_test.jsonl"
-# USMLE_STEP_1_input = "./Benchmark/english_usmle/USMLE_STEP_1.json"
-# USMLE_STEP_2_input = "./Benchmark/english_usmle/USMLE_STEP_2.json"
-# USMLE_STEP_3_input = "./Benchmark/english_usmle/USMLE_STEP_3.json"
-# USMLE_ethics_input = "./Benchmark/english_usmle/USMLE_ethics.json"
-
-# benchmarks = ['MedExpQA', 'MedMCQA', 'MedQA', 'USMLE_STEP_1', 'USMLE_STEP_2', 'USMLE_STEP_3','USMLE_ethics']
-# input_paths = [MedExpQA_input, MedMCQA_input, MedQA_input, USMLE_STEP_1_input,USMLE_STEP_2_input,USMLE_STEP_3_input, USMLE_ethics_input]
-
-# for i in tqdm(range(len(benchmarks)), desc = "Processing benchmarks"):
-#     output_path = f"./Benchmark_processed/{benchmarks[i]}_clean.json"
-#     input_path = input_paths[i]
-#     clean_benchmark(benchmarks[i], input_path, output_path)
-
-
-
-
-
