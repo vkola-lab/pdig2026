@@ -12,3 +12,4 @@ supplement_info/results
 *.npy
 *.npz
 __pycache__/supplement_info/results/
+__pycache__/
