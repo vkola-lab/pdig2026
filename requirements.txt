@@ -1,0 +1,22 @@
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl#sha256=1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85
+evaluate==0.4.3
+fastparquet==2024.11.0
+huggingface-hub==0.30.2
+matplotlib==3.10.0
+matplotlib-inline @ file:///work/perseverance-python-buildout/croot/matplotlib-inline_1698864771271/work
+numpy==1.26.4
+openai==1.76.0
+pydantic==2.11.3
+scikit-learn==1.6.1
+scipy==1.15.1
+scispacy==0.5.5
+seaborn==0.13.2
+sentence-transformers==3.4.1
+spacy==3.7.5
+statannotations==0.7.2
+statsmodels==0.14.4
+textstat==0.7.5
+tokenizers==0.21.1
+torch==2.6.0
+transformers==4.51.3
+vllm==0.8.4

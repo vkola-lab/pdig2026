@@ -1,0 +1,13 @@
+# Large result folders
+supplement_info/q_square_metric/
+supplement_info/result_clarification/
+supplement_info/ablation/precomputed/
+
+
+# optional cache/temp
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+__pycache__/

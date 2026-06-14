@@ -1,0 +1,11 @@
+,metric,pointbiserial_corr,p-value
+0,background_recall,0.09,0.0085
+1,ques_recall,0.0729,0.0332
+2,bleu4,0.0081,0.814
+3,bleu1,0.0071,0.8367
+4,meteor,-0.0005,0.9875
+5,rouge1,-0.0113,0.7408
+6,rouge2,-0.0011,0.9746
+7,rougeL,-0.0171,0.6183
+8,rougeLsum,-0.0171,0.6183
+9,bertscore_f1,-0.0639,0.0622
