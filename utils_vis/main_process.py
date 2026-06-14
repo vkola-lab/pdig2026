@@ -71,7 +71,7 @@ def merge_all_baseline_metrics(benchmark):
 # # Filter all right, all wrong question/background
 def extract_size(model_name: str) -> float:
     """
-    提取模型大小，支持 0.5B, 1.5B, 72B 这种格式
+    Extract size, e.g, 0.5B, 1.5B, 72B 
     """
     try:
         size_str = model_name.split("B")[0]  # "0.5", "72"
@@ -103,15 +103,14 @@ def filter_and_merge_df(arg_name, benchmark):
         else:
             filtered_records.append((b, q))
 
-    print(f"✔️ 所有模型都答对的问题数: {len(all_right_records)}")
-    print(f"❌ 所有模型都答错的问题数: {len(all_wrong_records)}")
-    print(f"🟡 混合答对答错的问题数: {len(filtered_records)}")
+    print(f"✔️ Records all models answer right: {len(all_right_records)}")
+    print(f"❌ Records all models answer wrong: {len(all_wrong_records)}")
+    print(f"🟡 Mixed wrong Records: {len(filtered_records)}")
 
     def is_in(record_list):
         record_set = set(record_list)
         return lambda row: (row['background'], row['question']) in record_set
 
-    # 分别筛选出 df 的三类子集
     all_right_df = merge_df[merge_df.apply(is_in(all_right_records), axis=1)]
     all_wrong_df = merge_df[merge_df.apply(is_in(all_wrong_records), axis=1)]
     filtered_df  = merge_df[merge_df.apply(is_in(filtered_records), axis=1)]
